@@ -22,6 +22,14 @@
       })();
     </script>
 
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/thaisemarco/service-worker.js')
+          .catch(err => console.warn('SW registration falhou:', err));
+      }
+    </script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thaíse &amp; Marco</title>
 
@@ -45,5 +53,6 @@
   </head>
   <body>
     <div id="root"></div>
+
   </body>
 </html>
